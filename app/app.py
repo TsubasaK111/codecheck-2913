@@ -1,6 +1,6 @@
 import pdb, logging
 
-logging.basicConfig(level=logging.DEBUG,
+logging.basicConfig(level=logging.ERROR,
                     filename='logs.log',
                     filemode='w')
 
@@ -31,7 +31,7 @@ def say_number(number):
             number_block = ""
         # Prevent overflow by pruning to 500 digits and breaking.
         if len(output_number)>499:
-            logging.warning(""" Reached 500 digit limit. Length of output is: {l}
+            logging.info(""" Reached 500 digit limit. Length of output is: {l}
                           """.format( l= len(output_number )))
             output_number = output_number[0:499]
             break
