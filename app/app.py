@@ -30,10 +30,10 @@ def say_number(number):
                                       e=block_expression ))
             number_block = ""
         # Prevent overflow by pruning to 500 digits and breaking.
-        if len(output_number)>499:
+        if len(output_number)>500:
             logging.info(""" Reached 500 digit limit. Length of output is: {l}
                           """.format( l= len(output_number )))
-            output_number = output_number[0:499]
+            output_number = output_number[0:500]
             break
 
     logging.debug( """ End of say_number. (output_number={o}, number={n})
